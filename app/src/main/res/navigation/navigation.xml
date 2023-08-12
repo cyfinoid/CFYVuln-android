@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/nav_splash">
+
+
+    <fragment
+        android:id="@+id/nav_splash"
+        android:name="cfy.vuln.app.SplashFragment"
+        android:label="Splash333"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_nav_splash_to_nav_sign_in"
+            app:destination="@id/nav_sign_in"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+        <action
+            android:id="@+id/action_nav_splash_to_user_add"
+            app:destination="@id/nav_user_cart_add"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+
+        <action
+            android:id="@+id/action_nav_splash_to_deliveryOrdered"
+            app:destination="@id/nav_delivery_status"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+        <action
+            android:id="@+id/action_nav_splash_to_admin_add"
+            app:destination="@id/nav_product_add"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+        <action
+            android:id="@+id/action_nav_splash_to_user_ordered"
+            app:destination="@id/nav_user_cart_ordered"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+        <action
+            android:id="@+id/action_nav_splash_to_imageview"
+            app:destination="@id/nav_user_image_webview"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_splash"
+            />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_in"
+        android:name="cfy.vuln.app.LoginFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_login"
+        >
+
+        <action
+            android:id="@+id/action_nav_sign_in_to_nav_sign_up"
+            app:destination="@id/nav_sign_up"
+
+            app:popUpTo="@id/nav_sign_in"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_nav_sign_in_to_delivery_status"
+            app:destination="@id/nav_delivery_status"
+
+            app:popUpTo="@id/nav_sign_in"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_nav_sign_in_to_product_list"
+            app:destination="@id/nav_product_add"
+
+            app:popUpTo="@id/nav_sign_in"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_nav_sign_in_to_user_cart"
+            app:destination="@id/nav_user_cart_add"
+
+            app:popUpTo="@id/nav_sign_in"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_nav_sign_in_to_ordered_user"
+            app:destination="@id/nav_user_cart_ordered"
+
+            app:popUpTo="@id/nav_sign_in"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sign_up"
+        android:name="cfy.vuln.app.NewUserFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_new_user"
+        >
+        <action
+            android:id="@+id/action_nav_sign_up_to_nav_sign_in"
+            app:destination="@id/nav_sign_in"
+
+            app:popUpTo="@id/nav_sign_up"
+            app:popUpToInclusive="true"
+
+            />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_delivery_status"
+        android:name="cfy.vuln.app.DeliveryStatusFragment"
+        android:label="Delivery Status"
+        tools:layout="@layout/fragment_delivery_status"
+        >
+        <action
+            android:id="@+id/action_nav_delivery_to_splash"
+            app:destination="@id/nav_splash"
+
+            app:popUpTo="@id/nav_delivery_status"
+            app:popUpToInclusive="true"
+
+            />
+        <action
+            android:id="@+id/action_nav_delivery_to_add"
+            app:destination="@id/nav_product_add"
+
+            app:popUpTo="@id/nav_delivery_status"
+            app:popUpToInclusive="true"
+
+            />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_product_add"
+        android:name="cfy.vuln.app.AdminProductListFragment"
+        android:label="Delivery Status"
+        tools:layout="@layout/fragment_admin_product_list"
+        >
+        <action
+            android:id="@+id/action_nav_prod_add_to_splash"
+            app:destination="@id/nav_splash"
+
+            app:popUpTo="@id/nav_product_add"
+            app:popUpToInclusive="true"
+
+            />
+
+        <action
+            android:id="@+id/action_nav_prod_add_to_delivery"
+            app:destination="@id/nav_delivery_status"
+
+            app:popUpTo="@id/nav_product_add"
+            app:popUpToInclusive="true"
+
+            />
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_cart_add"
+        android:name="cfy.vuln.app.UserCartFragment"
+        android:label="Delivery Status"
+        tools:layout="@layout/fragment_user_cart"
+        >
+        <action
+            android:id="@+id/action_nav_cart_add_to_splash"
+            app:destination="@id/nav_splash"
+
+            app:popUpTo="@id/nav_user_cart_add"
+            app:popUpToInclusive="true"
+
+            />
+        <action
+            android:id="@+id/action_nav_cart_to_summary"
+            app:destination="@id/nav_user_cart_summary"
+
+            app:popUpTo="@id/nav_user_cart_add"
+            app:popUpToInclusive="true"
+
+            />
+
+        <action
+            android:id="@+id/action_nav_cart_add_to_ordered"
+            app:destination="@id/nav_user_cart_ordered"
+
+            app:popUpTo="@id/nav_user_cart_add"
+            app:popUpToInclusive="true"
+
+            />
+        <action
+            android:id="@+id/action_nav_cart_add_to_imageview"
+            app:destination="@id/nav_user_image_webview"
+
+            app:popUpTo="@id/nav_user_cart_add"
+            app:popUpToInclusive="true"
+
+            />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_user_cart_ordered"
+        android:name="cfy.vuln.app.OrderedStatusFragment"
+        android:label="Ordered Status"
+        tools:layout="@layout/fragment_ordered_status"
+        >
+
+
+        <action
+            android:id="@+id/action_nav_cart_ordered_to_splash"
+            app:destination="@id/nav_splash"
+
+            app:popUpTo="@id/nav_user_cart_ordered"
+            app:popUpToInclusive="true"
+
+            />
+
+        <action
+            android:id="@+id/action_nav_cart_ordered_to_card_add"
+            app:destination="@id/nav_user_cart_add"
+
+            app:popUpTo="@id/nav_user_cart_ordered"
+            app:popUpToInclusive="true"
+
+            />
+
+
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_user_cart_summary"
+        android:name="cfy.vuln.app.PurchaseSummaryFragment"
+        android:label="Summary"
+        tools:layout="@layout/fragment_purchase_summary"
+        >
+        <action
+            android:id="@+id/action_nav_delivery_to_splash"
+            app:destination="@id/nav_splash"
+            app:popUpTo="@id/nav_user_cart_summary"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_nav_summary_to_card_add"
+            app:destination="@id/nav_user_cart_add"
+
+            app:popUpTo="@id/nav_user_cart_summary"
+            app:popUpToInclusive="true"
+
+            />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_user_image_webview"
+        android:name="cfy.vuln.app.ImageWebview"
+        android:label="Webview"
+        tools:layout="@layout/fragment_image_webview"
+        >
+        <action
+            android:id="@+id/action_nav_delivery_to_splash"
+            app:destination="@id/nav_splash"
+
+            app:popUpTo="@id/nav_user_image_webview"
+            app:popUpToInclusive="true"
+
+            />
+
+        <action
+            android:id="@+id/action_nav_imageview_to_cart_add"
+            app:destination="@id/nav_user_cart_add"
+
+            app:popUpTo="@id/nav_user_image_webview"
+            app:popUpToInclusive="true"
+
+            />
+
+
+
+    </fragment>
+
+
+</navigation>

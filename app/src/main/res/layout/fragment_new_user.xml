@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_marginTop="47dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        app:backgroundTint="@color/white"
+        android:id="@+id/fabClose"
+        android:background="@color/white"
+        app:elevation="10dp"
+        app:borderWidth="2dp"
+        android:layout_margin="10dp"
+        app:contentDescription="Back"
+        app:srcCompat="@drawable/baseline_arrow_back_24"
+        android:tint="@color/black"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Back" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/compImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/purple_700"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:src="@drawable/logo_icon"
+            android:layout_marginTop="25dp"
+            android:contentDescription="Logo"
+            android:scaleType="fitCenter"
+
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CFYVulnApp"
+            android:textColor="@color/light_blue"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            />
+    </LinearLayout>
+
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/compImg"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:ignore="MissingConstraints">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/compImg"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="5dp"
+
+
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:id="@+id/userLogo"
+                android:tint="@color/purple_500"
+                android:src="@drawable/baseline_account_circle_24"/>
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:id="@+id/adminLogo"
+                android:tint="@color/purple_500"
+                android:visibility="gone"
+                android:src="@drawable/admin"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/baseline_person_24"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:hint="User Name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+                    android:textColor="@color/white"
+                    android:id="@+id/userNameTextNewUser"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/baseline_lock_24"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:hint="Password">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+                    android:textColor="@color/white"
+                    android:inputType="textPassword"
+                    android:id="@+id/passwordTextNewUser"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/email"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                android:hint="Email id">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+
+                    android:textColor="@color/white"
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/emailTextNewUser"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/cell"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                android:hint="Phone Number">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+
+                    android:textColor="@color/white"
+                    android:inputType="number"
+                    android:id="@+id/phoneTextNewUser"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/NewUserButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Register"
+                app:icon="@drawable/baseline_login_24"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:shadowRadius="25"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:tint="@color/purple_500"
+        android:src="@drawable/comp_logo"
+        android:id="@+id/newUserLogo"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </LinearLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

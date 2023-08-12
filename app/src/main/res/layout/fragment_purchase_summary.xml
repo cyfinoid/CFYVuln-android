@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DeliveryStatusFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/pageClose"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            app:srcCompat="@drawable/baseline_close_24"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:textAlignment="center"
+            android:id="@+id/pageHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:letterSpacing=".1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Confirm Order"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/light_blue"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginStart="5dp"
+                android:clickable="true"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="0dp" />
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textColor="#000000"
+                    android:layout_marginStart="3dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:text="Item"/>
+
+
+                <TextView
+                    android:id="@+id/qnty_title"
+                    android:gravity="end"
+                    android:layout_weight="1.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:text="Qty"/>
+
+                <TextView
+                    android:layout_weight="1.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:gravity="end"
+                    android:textColor="#000000"
+                    android:layout_marginEnd="3dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:text="Price"/>
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="0dp" />
+
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="5dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:id="@+id/summaryRecyclerviewNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/quantity_summary_layout"
+                android:orientation="horizontal"
+                android:background="@android:color/transparent"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EBE9E9"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+
+        <TextView
+            android:gravity="center|start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Payment Info"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="2"
+                android:text="Total"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/purchaseAmount"
+                android:layout_width="0dp"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/light_blue"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:text="$0.00"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C2BFC2"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitProceed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/light_blue"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:gravity="center"
+            app:backgroundTint="@null"
+            android:text="Pay"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

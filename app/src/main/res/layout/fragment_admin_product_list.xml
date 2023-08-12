@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginFragment">
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.Catalog.AppBarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:id="@+id/toolbarLayout"
+            android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Product"
+                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_logout_24"
+                android:layout_weight="1"
+                android:id="@+id/logoutAdminAdd"
+                android:layout_gravity="center"
+                app:tint="@color/white"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    >
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/compImg"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="55dp"
+
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                app:tint="@color/purple_500"
+                android:src="@drawable/cart_add"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:hint="Product Name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+                    android:textColor="@color/white"
+                    android:id="@+id/productNameText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:hintTextColor="@color/teal_200"
+                app:startIconTint="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:prefixText="$"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:hint="Product Price">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+                    android:textColor="@color/white"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/priceText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                android:hint="Product image url">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+
+                    android:textColor="@color/white"
+                    android:inputType="textUri"
+                    android:id="@+id/productURLText"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconContentDescription="user name"
+                app:hintTextColor="@color/teal_200"
+                android:textColorHint="@color/white"
+                android:layout_marginBottom="15dp"
+                app:endIconTint="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                android:hint="Product Description">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#89B7C8"
+                    android:minLines="10"
+                    android:textColor="@color/white"
+                    android:inputType="textMultiLine"
+                    android:id="@+id/productDescription"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/addProductButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Add"
+                app:icon="@drawable/baseline_add_24"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:shadowRadius="25"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:tint="@color/purple_500"
+        android:src="@drawable/comp_logo"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

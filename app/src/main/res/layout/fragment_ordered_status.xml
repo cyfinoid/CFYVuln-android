@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OrderedStatusFragment">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.Catalog.AppBarLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:id="@+id/toolbarLayout"
+                android:orientation="horizontal">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ordered List"
+                    android:textColor="@color/white"
+                    android:layout_weight="2"
+
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_logout_24"
+                    android:layout_weight="1"
+                    android:id="@+id/orderLogout"
+                    android:layout_gravity="center"
+                    app:tint="@color/white"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="67dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No orders yet!"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textStyle="bold"
+        android:id="@+id/noOrder"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

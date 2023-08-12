@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CFYVulnApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="Model">
+        <item>Processing</item>
+        <item>Ready to Deliver</item>
+        <item>Delivered</item>
+
+    </string-array>
+
+
+    <string name="sign_up_enter_all_details">Enter all details.</string>
+    <string name="sign_up_user_name_no_spaces">Username should not contain spaces.</string>
+    <string name="sign_up_user_name_have_at_least_char">Username should have at least  3 characters.</string>
+    <string name="sign_up_password_no_spaces">Password should not contain spaces.</string>
+    <string name="sign_up_password_have_at_least_char">Password should at least have 3 characters.</string>
+    <string name="sign_up_email_invalid">Invalid Email address.</string>
+    <string name="sign_up_phone_have_at_least_digit">Phone number must be of 10 Digit.</string>
+    <string name="sign_up_success">Account created Successfully!.</string>
+
+
+</resources>

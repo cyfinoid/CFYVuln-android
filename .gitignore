@@ -31,3 +31,8 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# project specific files
+
+screenshots/
+Keystore.jks

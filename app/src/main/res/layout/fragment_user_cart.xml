@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DeliveryStatusFragment">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.Catalog.AppBarLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:id="@+id/toolbarLayout"
+            android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product List"
+                android:textColor="@color/white"
+                android:layout_weight="2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:src="@drawable/forward"
+                android:layout_weight="1"
+                android:id="@+id/shareUser"
+                android:layout_gravity="center"
+                app:tint="@color/white"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_logout_24"
+                android:layout_weight="1"
+                android:id="@+id/cartLogout"
+                android:layout_marginEnd="5dp"
+                android:padding="3dp"
+                android:layout_gravity="center"
+                app:tint="@color/white"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:divider="@color/black"
+        app:queryHint="Search item"
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:showDividers="middle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Product added !"
+        android:visibility="gone"
+        android:id="@+id/noProd"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"/>
+
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:clickable="false"
+            android:gravity="center_vertical"
+            android:minHeight="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/grey_90"
+            android:layout_marginBottom="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:focusable="false">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ivShoppingCart"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/cart_add"
+                app:tint="@color/white"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location Always"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    />-->
+
+                <TextView
+                    android:id="@+id/tvItemsPrice"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your cart is Empty!"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/viewCartMine"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="48dp"
+                android:text="View Cart"
+                android:textColor="@color/black"
+                app:cornerRadius="20dp"
+                app:elevation="0dp"
+                app:backgroundTint="@color/white"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
